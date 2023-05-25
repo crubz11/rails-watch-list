@@ -1,0 +1,10 @@
+<h1 class="text-center">Movies</h1>
+
+
+<div class="container">
+  <ol class="list-group list-group-numbered text-center">
+    <% @movies.each do |movie| %>
+    <li class="list-group-item"> <%= link_to movie.title, movie_path(movie), class: "text-decoration-none"%></li>
+    <% end %>
+  </ol>
+</div>

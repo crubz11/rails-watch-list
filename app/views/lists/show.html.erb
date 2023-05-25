@@ -1,0 +1,11 @@
+<h1 class="m-3"> <%= @list.name %> </h1>
+
+<ol class="list-group list-group-numbered m-3">
+  <% @list.bookmarks.each do |bookmark| %>
+    <li class="list-group-item">
+      <%= bookmark.comment %>   <%= link_to "", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'fa-sharp fa-solid fa-trash text-black m-2' %>
+    </li>
+  <% end %>
+</ol>
+
+<%=  link_to "New Bookmark", new_list_bookmark_path(@list), class: 'btn btn-primary m-3' %>

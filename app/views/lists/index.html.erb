@@ -1,0 +1,12 @@
+<h1 class="m-3">Lists</h1>
+
+<div class="m-1">
+  <ol class="list-group list-group-numbered m-3">
+  <% @lists.each do |list| %>
+    <li class="list-group-item"><%= link_to list.name, list_path(list), class: 'text-decoration-none' %></li>
+  <% end %>
+</ol>
+
+</div>
+
+<%= link_to 'New list', new_list_path, class: 'btn btn-primary mx-3' %>
