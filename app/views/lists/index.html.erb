@@ -1,12 +1,14 @@
-<h1 class="m-3">Lists</h1>
+<h1 class="m-3 text-center">Lists</h1>
 
-<div class="m-1">
+<div class="m-1 d-flex justify-content-evenly">
   <ol class="list-group list-group-numbered m-3">
-  <% @lists.each do |list| %>
-    <li class="list-group-item"><%= link_to list.name, list_path(list), class: 'text-decoration-none' %></li>
-  <% end %>
-</ol>
-
+    <% @lists.each do |list| %>
+      <li class="list-group-item"><%= link_to list.name, list_path(list), class: 'text-decoration-none' %> <%= cl_image_tag list.photo.key, width: 150, height: 200, crop: :scale, class: 'm-2'%></li>
+    <% end %>
+  </ol>
 </div>
 
-<%= link_to 'New list', new_list_path, class: 'btn btn-primary mx-3' %>
+
+<div class="text-center">
+  <%= link_to 'New list', new_list_path, class: 'btn btn-primary mx-3' %>
+</div>
